@@ -1,0 +1,11 @@
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <g transform="matrix(-1 0 0 1 24 0)" fill="none" fill-rule="evenodd">
+        <rect fill="#FFF" width="24" height="24" rx="12"/>
+        <g stroke="#03184E" stroke-linecap="round" stroke-width="2">
+            <path d="m11.942 12.064 3.758 3.75M11.942 12.064l3.758-3.75"/>
+            <g>
+                <path d="m12 12.064-3.758 3.75M12 12.064l-3.758-3.75"/>
+            </g>
+        </g>
+    </g>
+</svg>
