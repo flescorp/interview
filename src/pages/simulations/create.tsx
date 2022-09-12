@@ -1,16 +1,18 @@
 import styled from 'styled-components';
 import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useMutation } from 'react-query';
 import TextField from '@/components/Common/TextField/TextField';
 import Button, { ButtonSize, ButtonVariant } from '@/components/Common/Button';
 import RadioGroup from '@/components/Simulations/RadioGroup/RadioGroup';
 import Title from '@/components/Common/Title/Title';
-import Alert from '@/components/Common/Modal/Alert';
-import CopyLink from '@/components/Simulations/CopyLink';
 import Mask from '@/styles/Mask.styled';
 import { Mode } from '@/modules/simulataions/type';
 import { fetchSimulationCreate, SimulationCreate } from '@/api/simulations';
+
+const Alert = dynamic(() => import('@/components/Common/Modal/Alert'));
+const CopyLink = dynamic(() => import('@/components/Simulations/CopyLink'));
 
 const Form = styled.form`
   margin: 0 auto;
