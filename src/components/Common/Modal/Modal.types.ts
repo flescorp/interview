@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface ModalProp {
   visible: boolean;
@@ -7,6 +7,7 @@ interface ModalProp {
   title?: string;
   onConfirm?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onClose?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   height?: number | string;
   width?: number | string;
 }
