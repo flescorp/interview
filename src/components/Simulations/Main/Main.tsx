@@ -229,14 +229,38 @@ function Main({
       return newData;
     };
 
-    if (type === BanPick.Ban && team === TeamType.Blue) {
-      setBlueBans(updateBanPick(blueBans));
-    } else if (type === BanPick.Ban && team === TeamType.Red) {
-      setRedBans(updateBanPick(redBans));
-    } else if (type === BanPick.Pick && team === TeamType.Blue) {
-      setBluePicks(updateBanPick(bluePicks));
-    } else if (type === BanPick.Pick && team === TeamType.Red) {
-      setRedPicks(updateBanPick(redPicks));
+    // if (type === BanPick.Ban && team === TeamType.Blue) {
+    //   setBlueBans(updateBanPick(blueBans));
+    // } else if (type === BanPick.Ban && team === TeamType.Red) {
+    //   setRedBans(updateBanPick(redBans));
+    // } else if (type === BanPick.Pick && team === TeamType.Blue) {
+    //   setBluePicks(updateBanPick(bluePicks));
+    // } else if (type === BanPick.Pick && team === TeamType.Red) {
+    //   setRedPicks(updateBanPick(redPicks));
+    // }
+
+    if (type === BanPick.Ban) {
+      switch (team) {
+        case TeamType.Blue:
+          setBlueBans(updateBanPick(blueBans));
+          break;
+        case TeamType.Red:
+          setRedBans(updateBanPick(redBans));
+          break;
+        default:
+          break;
+      }
+    } else if (type === BanPick.Pick) {
+      switch (team) {
+        case TeamType.Blue:
+          setBluePicks(updateBanPick(bluePicks));
+          break;
+        case TeamType.Red:
+          setRedPicks(updateBanPick(redPicks));
+          break;
+        default:
+          break;
+      }
     }
   };
 
@@ -244,14 +268,38 @@ function Main({
     const { team, order, type } = BAN_PICK_TURN[turn];
     let params = {};
 
-    if (type === BanPick.Ban && team === TeamType.Blue) {
-      params = blueBans[order];
-    } else if (type === BanPick.Ban && team === TeamType.Red) {
-      params = redBans[order];
-    } else if (type === BanPick.Pick && team === TeamType.Blue) {
-      params = bluePicks[order];
-    } else if (type === BanPick.Pick && team === TeamType.Red) {
-      params = redPicks[order];
+    // if (type === BanPick.Ban && team === TeamType.Blue) {
+    //   params = blueBans[order];
+    // } else if (type === BanPick.Ban && team === TeamType.Red) {
+    //   params = redBans[order];
+    // } else if (type === BanPick.Pick && team === TeamType.Blue) {
+    //   params = bluePicks[order];
+    // } else if (type === BanPick.Pick && team === TeamType.Red) {
+    //   params = redPicks[order];
+    // }
+
+    if (type === BanPick.Ban) {
+      switch (team) {
+        case TeamType.Blue:
+          params = blueBans[order];
+          break;
+        case TeamType.Red:
+          params = redBans[order];
+          break;
+        default:
+          break;
+      }
+    } else if (type === BanPick.Pick) {
+      switch (team) {
+        case TeamType.Blue:
+          params = bluePicks[order];
+          break;
+        case TeamType.Red:
+          params = redPicks[order];
+          break;
+        default:
+          break;
+      }
     }
 
     banPickCreateMutate.mutate({
